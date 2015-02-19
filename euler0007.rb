@@ -1,14 +1,17 @@
 require_relative "lib/helpers"
 
-# Problem #7 (https://projecteuler.net/problem=7)
-#
-# 10001st prime
-#
-# The sum of the squares of the first ten natural numbers is,
-#
-# By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
-#
-# What is the 10 001st prime number?
+show_problem_info({
+  number: 7,
+  title: "10001st prime",
+  statement: %Q{
+    The sum of the squares of the first ten natural numbers is,
+
+    By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+
+    What is the 10 001st prime number?
+  },
+  url: "https://projecteuler.net/problem=7"
+})
 
 LIMIT = 10001
 
