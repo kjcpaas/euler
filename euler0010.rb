@@ -14,20 +14,15 @@ show_problem_info({
 LIMIT = 2000000
 
 benchmark_solution(142913828922) do
-  PRIMES = [2]
-  number = 3
+  require_relative "lib/integer_extensions"
 
-  while number < LIMIT do
-    inner_limit = Math.sqrt(number)
-    PRIMES.each do |prime|
-      if prime > inner_limit
-        PRIMES << number
-        break
-      end
-      break if number % prime == 0
-    end
-    number += 2
+  class Integer
+    include IntegerExtensions
   end
 
-  PRIMES.inject { |sum, prime| sum + prime }
+  sum = 0
+  Integer.prime_sieve(LIMIT).each_with_index do |is_prime, i|
+    sum += i if is_prime
+  end
+  sum
 end
