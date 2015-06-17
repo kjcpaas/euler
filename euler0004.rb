@@ -15,7 +15,7 @@ benchmark_solution(906609) do
   def palindrome?(number)
     string = number.to_s
     0.upto((string.length - 2)/2) do |i|
-      return false unless string[i] === string[-1 - i]
+      return false unless string[i] == string[-1 - i]
     end
     true
   end
